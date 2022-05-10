@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
 class usersController extends Controller
 {
     function loadView(){
-        $data = ['anil', 'peter', 'roky', 'sima'];
-        return view('users', ['users' =>$data]);
+        
+        // return DB::select("select * from columns");
+         return User::all();
     }
 }
