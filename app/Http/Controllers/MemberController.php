@@ -12,4 +12,10 @@ class MemberController extends Controller
         $data= listMember::all();
         return view('list', ['members'=>$data]);
     }
+
+    function delete($id){
+        $data=listMember::find($id);
+        $data->delete();
+        return redirect('list');
+    }
 }

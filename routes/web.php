@@ -9,6 +9,7 @@ use App\Http\Controllers\nuserController;
 use App\Http\Controllers\uploadController;
 use App\Http\Controllers\userAuth;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\addMemberController;
 use App\Models\Post;
 
 Route::get('/', function(){
@@ -60,3 +61,6 @@ Route::get('/logout', function(){
 });
 
 Route::get('/list', [MemberController::class, 'show']);
+Route::get('/delete/{id}', [MemberController::class, 'delete']);
+Route::view('add', 'addMember');
+Route::post('add', [addMemberController::class, 'addData']);
